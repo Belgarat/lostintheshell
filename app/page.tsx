@@ -5,18 +5,15 @@ import {track} from "@vercel/analytics";
 
 export default function Home() {
     const logClick = async (type: string) => {
-        try {
-            await fetch('/api/log-click', {
-                method: 'POST',
-                body: JSON.stringify({ type }),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-        } catch (err) {
-            console.error('Logging error', err)
-        }
+        await fetch('/api/log-click', {
+            method: 'POST',
+            body: JSON.stringify({ type, landing: 'lost-in-the-shell' }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
     }
+
 
     const handleAmazonClick = () => {
         logClick('amazon')
