@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import {track} from "@vercel/analytics";
 
 export default function Home() {
     const logClick = async (type: string) => {
@@ -19,11 +20,13 @@ export default function Home() {
 
     const handleAmazonClick = () => {
         logClick('amazon')
+        track('amazon click')
         window.location.href = 'https://a.co/d/b76kusy'
     }
 
     const handleDownloadClick = () => {
         logClick('download')
+        track('download click')
         window.open('/extract.pdf', '_blank')
     }
 
