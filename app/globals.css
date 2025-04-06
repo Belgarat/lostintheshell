@@ -50,7 +50,7 @@ h1, h2, h3, .title {
 .hero h1 {
   font-size: 3.2rem;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 14px rgba(127, 90, 240, 0.6);
+  text-shadow: 0 2px 5px #7f5af0d1;
   letter-spacing: 2px;
 }
 

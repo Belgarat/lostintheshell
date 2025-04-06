@@ -43,7 +43,7 @@ export default function Home() {
             <h1>Lost in the Shell</h1>
             <p>
                 17 strange stories. One distorted reality. <br />
-                A surreal sci-fi journey for the curious mind.
+                A surreal sci-fi journey for <span style={{fontWeight: "bold", color: "#ff6a00"}}>thinkers.</span>.
             </p>
 
             <div className="buttons">
@@ -57,7 +57,7 @@ export default function Home() {
             </div>
 
             <p className="reminder">
-                ✨ If you enjoyed the read, please leave a review on Amazon.<br />
+                💬 If you enjoyed the read, please leave a review on Amazon.<br />
                 It helps independent voices stay alive.
             </p>
         </section>
