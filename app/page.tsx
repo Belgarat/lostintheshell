@@ -2,8 +2,18 @@
 
 import Image from 'next/image'
 import {track} from "@vercel/analytics";
+import {useEffect} from "react";
 
 export default function Home() {
+    useEffect(() => {
+        fetch('/api/log-click', {
+            method: 'POST',
+            body: JSON.stringify({ type: 'view', landing: 'lost-in-the-shell' }),
+            headers: { 'Content-Type': 'application/json' },
+        })
+    }, [])
+
+
     const logClick = async (type: string) => {
         await fetch('/api/log-click', {
             method: 'POST',
