@@ -31,7 +31,7 @@ export default function Home() {
         <section className="hero">
             <div className="cover-wrapper">
                 <Image
-                    src="/cover.jpg"
+                    src="/cover.webp"
                     alt="Book cover: Lost in the Shell"
                     width={300}
                     height={450}

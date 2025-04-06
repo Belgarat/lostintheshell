@@ -33,7 +33,7 @@ h1, h2, h3, .title {
 }
 
 .hero {
-  background-image: url('/header.png');
+  background-image: url('/header.webp');
   background-size: cover;
   background-position: center;
   min-height: 100dvh; /* usa unità dinamica moderna */
@@ -136,7 +136,7 @@ h1, h2, h3, .title {
 
 @media (max-width: 768px) {
   .hero {
-    background-image: url("/header.png");
+    background-image: url('/header.webp');
     min-height: 85dvh; /* usa unità dinamica moderna */
     padding: 1.5rem;
   }
@@ -162,7 +162,7 @@ h1, h2, h3, .title {
 
 @media (max-width: 480px) {
   .hero {
-    background-image: url('/header.png');
+    background-image: url('/header.webp');
     min-height: 85dvh; /* usa unità dinamica moderna */
     padding: 1rem;
   }
