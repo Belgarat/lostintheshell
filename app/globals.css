@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0c0c14;
+  --foreground: #e0e0e0;
+  --accent: #7f5af0;
+  --accent-hover: #6243e0;
+  --glass: rgba(255, 255, 255, 0.05);
+  --font-title: 'Orbitron', sans-serif;
+  --font-body: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, .title {
+  font-family: var(--font-title), sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(127, 90, 240, 0.6);
+}
+
+.hero {
+  background-image: url('/header.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh; /* usa unità dinamica moderna */
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 14px rgba(127, 90, 240, 0.6);
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.btn {
+  background: linear-gradient(135deg, #7f5af0, #4e31a6);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 18px rgba(127, 90, 240, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: pulse 3s infinite;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a78bfa, #6d28d9);
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.9);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.4);
+  animation: none;
+}
+
+.btn.secondary:hover {
+  background-color: var(--glass);
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 20px rgba(127, 90, 240, 0.7);
+}
+
+/* Animazione leggera tipo "respiro" */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 18px rgba(127, 90, 240, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(127, 90, 240, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 18px rgba(127, 90, 240, 0.6);
+  }
+}
+
+.reminder {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-style: italic;
+  font-family: var(--font-body), serif;
+  max-width: 600px;
+  margin-inline: auto;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("/header.png");
+    min-height: 85dvh; /* usa unità dinamica moderna */
+    padding: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-image: url('/header.png');
+    min-height: 85dvh; /* usa unità dinamica moderna */
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.book-cover {
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(127, 90, 240, 0.3);
+  max-width: 90vw;
+  height: auto;
+}
+
+.cover-wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.book-cover {
+  max-width: 90vw;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(127, 90, 240, 0.3);
+  object-fit: contain;
+}
