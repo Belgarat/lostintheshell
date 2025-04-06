@@ -84,6 +84,11 @@ h1, h2, h3, .title {
   letter-spacing: 1px;
   animation: pulse 3s infinite;
 }
+.btn img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
 .btn:hover {
   transform: scale(1.05);

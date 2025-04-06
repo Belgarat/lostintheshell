@@ -47,11 +47,12 @@ export default function Home() {
             </p>
 
             <div className="buttons">
-                <button className="btn" onClick={handleAmazonClick}>
-                    🚀 Buy on Amazon
+                <button className="btn flex items-center gap-2" onClick={handleAmazonClick}>
+                    <img src="/amazon.svg" alt="Amazon logo" className="w-5 h-5" />
+                    Buy on Amazon
                 </button>
                 <button className="btn secondary" onClick={handleDownloadClick}>
-                    📄 Download a Sample
+                    📄 Get a sneak peek
                 </button>
             </div>
 
