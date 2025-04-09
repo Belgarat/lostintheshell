@@ -182,6 +182,18 @@ export default function Home() {
                     />
                 </div>
             </section>
+            <footer className="text-center text-sm text-white opacity-60 py-6">
+                <p className="text-xs opacity-50 text-center mt-12">
+                    This site does not use cookies. Only anonymized interaction data is collected for analytics and performance improvements.
+                </p>
+
+                <p>
+                    © {new Date().getFullYear()} Michael B. Morgan ·{' '}
+                    <a href="/privacy" className="underline hover:text-purple-400">
+                        Privacy
+                    </a>
+                </p>
+            </footer>
         </>
     )
 }
