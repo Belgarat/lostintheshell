@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import {track} from "@vercel/analytics";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 export default function Home() {
     useEffect(() => {
@@ -62,11 +62,11 @@ export default function Home() {
     }
 
 
-    const handleAmazonClick = () => {
+/*    const handleAmazonClick = () => {
         logClick('amazon')
         track('amazon click')
         window.location.href = 'https://a.co/d/b76kusy'
-    }
+    }*/
 
     const handleDownloadClick = () => {
         logClick('download')
@@ -78,6 +78,15 @@ export default function Home() {
         logClick('clickarrow')
         track('clickarrow')
         window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+    }
+
+    const [showModal, setShowModal] = useState(false)
+
+    const handleMarketClick = (url: string, market: string) => {
+        logClick(`amazon-${market}`)
+        track(`amazon ${market}`)
+        window.open(url, '_blank')
+        setShowModal(false)
     }
 
     return (
@@ -101,7 +110,7 @@ export default function Home() {
                 </p>
 
                 <div className="buttons">
-                    <button className="btn flex items-center gap-2" onClick={handleAmazonClick}>
+                    <button className="btn flex items-center gap-2" onClick={() => setShowModal(true)}>
                         <Image
                             src="/amazon.svg"
                             alt="Amazon"
@@ -194,6 +203,30 @@ export default function Home() {
                     </a>
                 </p>
             </footer>
+            {showModal && (
+                <div className="modal-overlay" onClick={() => setShowModal(false)}>
+                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                        <h2 className="text-xl font-bold mb-4">Choose your Amazon Store</h2>
+                        <div className="space-y-2">
+                            <button onClick={() => handleMarketClick('https://a.co/d/8BPRzrN', 'usa')} className="btn w-full">
+                                🇺🇸 USA (amazon.com)
+                            </button>
+                            <button onClick={() => handleMarketClick('https://amzn.eu/d/evbgXOk', 'uk')} className="btn w-full">
+                                🇬🇧 UK (amazon.co.uk)
+                            </button>
+                            <button onClick={() => handleMarketClick('https://a.co/d/iR6z9FP', 'canada')} className="btn w-full">
+                                🇨🇦 Canada (amazon.ca)
+                            </button>
+                            <button onClick={() => handleMarketClick('https://amzn.asia/d/0Xbe6XU', 'australia')} className="btn w-full">
+                                🇦🇺 Australia (amazon.com.au)
+                            </button>
+                        </div>
+                        <button className="btn secondary mt-6" onClick={() => setShowModal(false)}>
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
     )
 }
