@@ -110,7 +110,11 @@ export default function Home() {
                 </p>
 
                 <div className="buttons">
-                    <button className="btn flex items-center gap-2" onClick={() => setShowModal(true)}>
+                    <button className="btn flex items-center gap-2"   onClick={() => {
+                        setShowModal(true)
+                        logClick('amazon-modal')
+                        track('amazon modal open')
+                    }}>
                         <Image
                             src="/amazon.svg"
                             alt="Amazon"
