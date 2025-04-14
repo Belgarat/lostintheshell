@@ -58,7 +58,7 @@ h1, h2, h3, .title {
   align-items: center;
   text-align: center;
   backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: transparent;
   width: 100vw;
   margin: 2em auto!important;
 }
@@ -87,6 +87,7 @@ h1, h2, h3, .title {
   flex-wrap: wrap;
   margin-bottom: 2rem;
   justify-content: center;
+  flex-direction: column;
 }
 
 .btn {
@@ -130,6 +131,20 @@ h1, h2, h3, .title {
   border-color: white;
   box-shadow: 0 0 20px rgba(127, 90, 240, 0.7);
 }
+
+.btn.amazon {
+  background: linear-gradient(135deg, #FF9900, #cc7a00);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.65), 0 0 40px rgba(255, 153, 0, 0.2);
+  border: 2px solid #fff4c1;
+}
+
+
+.btn.amazon:hover {
+  background: linear-gradient(135deg, #ffae33, #cc7a00);
+  box-shadow: 0 0 24px rgba(255, 153, 0, 0.7);
+}
+
 
 /* Animazione leggera tipo "respiro" */
 @keyframes pulse {
